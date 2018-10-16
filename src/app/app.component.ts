@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ export class AppComponent  {
     keyword: this.keyword
   });
 
-  public constructor(private titleService: Title, private router: Router) {}
+  public constructor(private titleService: Title, private router: Router, private userService: UserService) {}
 
   /**
    * Set the browser title.
@@ -26,11 +27,13 @@ export class AppComponent  {
     this.titleService.setTitle(title);
   }
 
-  public search(): void {
-    if (this.searchForm.valid) {
-      this.router.navigate(['/search', this.searchForm.value.keyword]);
-    } else {
-      alert('Please check your input');
-    }
+  /**
+   * User logout.
+   */
+  public logout() {
+    this.userService.logout().subscribe(res => {
+      this.userService.handleLogout();
+      this.router.navigate(['']);
+    });
   }
 }
