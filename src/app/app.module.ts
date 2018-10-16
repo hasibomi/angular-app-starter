@@ -6,19 +6,20 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchResultComponent } from './search-result/search-result.component';
-import { WeatherComponent } from './weather/weather.component';
-import { WeatherViewComponent } from './weather-view/weather-view.component';
 import { LoadingComponent } from './loading/loading.component';
+import { RegisterComponent } from './register/register.component';
+import { SigninComponent } from './signin/signin.component';
+import { ValidationComponent } from './validation/validation.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchResultComponent,
-    WeatherComponent,
-    WeatherViewComponent,
-    LoadingComponent
+    LoadingComponent,
+    RegisterComponent,
+    SigninComponent,
+    ValidationComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +28,7 @@ import { LoadingComponent } from './loading/loading.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

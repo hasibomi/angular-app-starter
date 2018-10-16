@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
+import { SigninComponent } from './signin/signin.component';
 import { HomeComponent } from './home/home.component';
-import { SearchResultComponent } from './search-result/search-result.component';
-import { WeatherViewComponent } from './weather-view/weather-view.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'search/:keyword', component: SearchResultComponent },
-  { path: 'weather/:woeid', component: WeatherViewComponent }
+  { path: 'signup', component: RegisterComponent },
+  { path: 'signin', component: SigninComponent }
 ];
 
 @NgModule({
@@ -16,4 +17,6 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
+
 export class AppRoutingModule { }
