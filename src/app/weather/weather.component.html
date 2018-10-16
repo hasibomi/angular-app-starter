@@ -1,0 +1,7 @@
+<div class="div" *ngIf="dataLoaded && result">
+  <h4 class="text-center">{{result.title}}</h4>
+
+  <p *ngIf="viewButton"><a routerLink="/weather/{{result.woeid}}" class="btn btn-primary btn-block" (click)="setTitle('Viewing ' + result.title)">View</a></p>
+</div>
+
+<div *ngIf="dataLoaded && ! result">No result found</div>

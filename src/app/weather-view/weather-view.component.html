@@ -1,0 +1,33 @@
+<div class="row" *ngIf="dataLoaded">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <app-weather [result]="weather" [viewButton]="false" [dataLoaded]="dataLoaded"></app-weather>
+
+        <div class="row">
+          <div class="col-md-4" *ngFor="let cs of weather.consolidated_weather">
+            <div class="card">
+              <div class="card-body">
+                <p><strong>Applicable date</strong>: {{cs.applicable_date}}</p>
+                <p><strong>Air pressure</strong>: {{cs.air_pressure}}</p>
+                <p><strong>Humidity</strong>: {{cs.humidity}}</p>
+                <p><strong>Max Temperature</strong>: {{cs.max_temp}}</p>
+                <p><strong>Min Temperature</strong>: {{cs.min_temp}}</p>
+                <p><strong>Predictability</strong>: {{cs.predictability}}</p>
+                <p><strong>Current Temperature</strong>: {{cs.the_temp}}</p>
+                <p><strong>Visibility</strong>: {{cs.visibility}}</p>
+                <p><strong>Weather State</strong>: {{cs.weather_state_name}}</p>
+                <p><strong>Weather State short name</strong>: {{cs.weather_state_abbr}}</p>
+                <p><strong>Wind Direction</strong>: {{cs.wind_direction}}</p>
+                <p><strong>Wind Direction Compass</strong>: {{cs.wind_direction_compass}}</p>
+                <p><strong>Wind Speed</strong>: {{cs.wind_speed}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-loading *ngIf="! dataLoaded"></app-loading>
