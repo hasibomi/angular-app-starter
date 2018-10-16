@@ -14,4 +14,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## API server
 
 Change directory to `api`. Run `php -S 127.0.0.1:8000`.
-# angular6-starter
+
+# Angular App Starter
+Please see the wiki to use this project.
