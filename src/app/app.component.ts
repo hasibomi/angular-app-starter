@@ -16,7 +16,7 @@ export class AppComponent  {
     keyword: this.keyword
   });
 
-  public constructor(private titleService: Title, private router: Router, private userService: UserService) {}
+  public constructor(private titleService: Title, private router: Router, public userService: UserService) {}
 
   /**
    * Set the browser title.
